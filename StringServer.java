@@ -11,10 +11,10 @@ class Handler implements URLHandler {
         else if(url.getPath().contains("/add-message")){
             String[] param = url.getQuery().split("=");
             //String template = param + "\n";
-            System.out.println("Added" + param[1] + "to your messages."); 
+            System.out.println("Added " + param[1] + " to your messages!"); 
             System.out.println(param[1]);
             message = message + "\n" + param[1];
-            return String.format("\n", param[1]);
+            return String.format("Added %s to your messages!", param[1]);
         }
         return "404 Not Found!";
     }
